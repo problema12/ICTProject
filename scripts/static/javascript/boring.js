@@ -1,0 +1,3 @@
+function Boring(){
+    $.post("/boring/");
+}
