@@ -12,4 +12,5 @@ app = create_app()
 
 #we are going to start the flask server with the specified host and port and we are going to set the debug boolean as True
 if __name__ == '__main__':
-    app.run(host='192.168.1.207', port=5000, debug=True)
+    app.run(host='172.20.39.92', port=5000, debug=True)
+    
