@@ -4,6 +4,9 @@ from flask import Flask, Blueprint, render_template, request
 
 server = Blueprint('index', __name__)
 
+step = 0
+
+
 #function that will render the boring page
 @server.route('/boring')
 def boring():
@@ -12,12 +15,14 @@ def boring():
 #function that goes back with 1 step for animation and music
 @server.route('/back')
 def back():
-    return render_template('Back.html')
+    global step
+    step -= 1
+    return render_template('creative.html', musicVariable = f'{step}', animationVariable= f'{step}')
 
 #function that goes infornt with 1 step for animation and music
 @server.route('/next')
 def next():
-    return render_template('')
+    return render_template('creative.html', musicVariable = f'{step}', animationVariable = f'{step}')
 
 
 #main function that will return the main HTML page
